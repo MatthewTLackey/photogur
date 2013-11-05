@@ -18,11 +18,26 @@ class PicturesController < ApplicationController
       #if the save for the picture was successful, go to index.html.erb
       redirect_to pictures_url
     
-  else
-    #otherwise render the view associated with the action :new (i.e. new.html.erb)
-    render :new
+    else
+      #otherwise render the view associated with the action :new (i.e. new.html.erb)
+      render :new
+    end
   end
-end
+
+  def edit
+    @picture = Picture.find(params[:id])
+  end
+
+  def update
+    @picture = Picture.find(params[:id])
+
+    if @picture.update_attributes(picture_params)
+      redirect_to "/pictures/#{@picture.id}"
+    else
+      render :edit
+    end
+  end
+
 
 
   private
