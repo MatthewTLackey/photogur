@@ -11,3 +11,72 @@
  *= require_self
  *= require_tree .
  */
+
+body{
+  background-color: #362C30;
+  color: white;
+ }
+
+
+.container{
+  background-color: #362C30;
+  width: 70%;
+  margin: auto;
+
+}
+
+.header_button{
+  font-family: Helvetica;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 150px;
+
+}
+
+.photo_container{
+  background-color: #6B5C61;
+  width: 640px;
+  float: left;
+  display: inline-block;  
+  border-radius: 10px;
+  
+  
+}
+
+.photo{
+  width: 140px;
+  display: inline-block;
+  
+  margin: 5px;
+  
+  float: left;
+
+
+}
+.info{
+  color: white;
+  font-size: 10px;
+  display: inline-block;
+}
+
+img{
+  border: 3px solid #362C30;
+  padding: 0px;
+  margin: 3px;
+
+}
+
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.upload_box{
+  background-color: #6B5C61;
+  border-radius: 10px;
+  float:right;
+  width: 320px;
+
+}

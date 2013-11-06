@@ -1,7 +1,17 @@
-<h1>Pictures</h1>
-<%= link_to "New Picture", "/pictures/new" %>
-
-<% @pictures.each do |picture| %>
-  <p><%= picture[:title] %>, <%= picture[:artist] %></p>
-  <img src="<%= picture[:url] %>">
-  <% end %>
+<div class= "header_bar">
+  <div class= "header_button">Photogur</div>
+  <div class= "header_button"><%= link_to "Add photo", "/pictures/new" %></div>
+</div>
+<div class="container">
+  <div class="photo_container">
+    <% @pictures.each do |picture| %>
+    <a href= "<%=picture[:url]%>"><div class="photo">
+        <img class="photo" src="<%= picture[:url] %>">
+        <p class="info"><%= picture[:title] %>,<br> <%= picture[:artist] %></p></div></a>
+      <% end %>
+    
+  </div>
+  <div class="upload_box">
+    Upload box
+  </div>
+</div>
