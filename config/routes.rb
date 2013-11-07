@@ -2,7 +2,11 @@ Photogur::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root :to => "pictures#index"
-  resources :pictures
+  resources :pictures do
+    resources :comments
+  end
+
+  # get 'pictures/:picture_id/comments' => 'comments#index', :as => 'comments'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

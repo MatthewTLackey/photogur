@@ -1,14 +1,17 @@
 class PicturesController < ApplicationController
   
   def index
+    @comments = Comment.all
     @pictures = Picture.all
   end
 
   def show
+
     @picture = Picture.find(params[:id])
   end
 
   def new
+    @comments = Comment.all
     @picture = Picture.new
   end
 
@@ -47,7 +50,7 @@ class PicturesController < ApplicationController
 
   private
   def picture_params
-    params.require(:picture).permit(:artist, :title, :url)
+    params.require(:picture).permit(:artist, :title, :url, :comments)
   end
 
 

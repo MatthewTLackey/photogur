@@ -5,13 +5,17 @@
 <div class="container">
   <div class="photo_container">
     <% @pictures.each do |picture| %>
-    <a href= "<%=picture[:url]%>"><div class="photo">
-        <img class="photo" src="<%= picture[:url] %>">
-        <p class="info"><%= picture[:title] %>,<br> <%= picture[:artist] %></p></div></a>
+      <%= link_to picture_path(picture) do %>
+        <div class="photo">
+          <img class="photo" src="<%= picture[:url] %>">
+          <p class="info"><%= picture[:title] %>,<br> <%= picture[:artist] %></p>
+        </div>
       <% end %>
+
+    <% end %>
     
   </div>
   <div class="upload_box">
-    Upload box
+    Upload
   </div>
 </div>
