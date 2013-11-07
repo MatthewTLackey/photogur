@@ -1,7 +1,11 @@
 class CommentController < ApplicationController
 
   def index
-    @comments = Comment.all
+    @comments = [
+      :content => "This is a comment",
+      :username => "Bill"
+      :id => 1
+    ]
   end
 
   def new

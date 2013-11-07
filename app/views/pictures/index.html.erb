@@ -3,16 +3,19 @@
   <div class= "header_button"><%= link_to "Add photo", "/pictures/new" %></div>
 </div>
 <div class="container">
-  <div class="photo_container">
-    <% @pictures.each do |picture| %>
-      <%= link_to picture_path(picture) do %>
-        <div class="photo">
-          <img class="photo" src="<%= picture[:url] %>">
-          <p class="info"><%= picture[:title] %>,<br> <%= picture[:artist] %></p>
-        </div>
+  <h1>Most Recent Pictures</h1>
+  <div>
+    <ul>
+      <% @most_recent_pictures.each do |picture| %>
+        <li><%= picture[:title]%>, <% picture[:artist] %>
+          <%= link_to image_tag(picture.url),"/pictures#{picture.id}"%></li>
       <% end %>
+    </ul>
+  </div>
 
-    <% end %>
+
+
+
     
   </div>
   <div class="upload_box">
