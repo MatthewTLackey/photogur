@@ -13,8 +13,9 @@
     </ul>
   </div>
 
+  <p>Pictures created more than one day ago: <%= Picture.created_before(1.hour.ago).count %></p>
 
-
+  <p>Pictures created more than one day ago: <%= Picture.created_before(1.day.ago).count %></p>
 
     
   </div>
