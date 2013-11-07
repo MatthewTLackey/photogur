@@ -13,9 +13,10 @@
     </ul>
   </div>
 
-  <p>Pictures created more than one day ago: <%= Picture.created_before(1.hour.ago).count %></p>
+  <p>Pictures created within one hour: <%= Picture.created_within(1.hour.ago).count %></p>
 
-  <p>Pictures created more than one day ago: <%= Picture.created_before(1.day.ago).count %></p>
+  <p>Pictures created within a day: <%= Picture.created_within(1.day.ago).count %></p>
+  <p>Total number of pictures in the database: <%=Picture.count %></p>
 
     
   </div>
