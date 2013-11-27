@@ -1,8 +1,8 @@
 class PicturesController < ApplicationController
   
   def index
-    # @comments = Comment.all
-    # @pictures = Picture.all
+     @comments = Comment.all
+    @pictures = Picture.all
     @most_recent_pictures = Picture.most_recent_five
   end
 

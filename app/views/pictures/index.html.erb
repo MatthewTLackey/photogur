@@ -2,25 +2,51 @@
   <div class= "header_button">Photogur</div>
   <div class= "header_button"><%= link_to "Add photo", "/pictures/new" %></div>
 </div>
+
 <div class="container">
-  <h1>Most Recent Pictures</h1>
-  <div>
-    <ul>
+
+
+
+  <div class="most_recent">
+    <h1>Most Recent Pictures</h1>
+  
       <% @most_recent_pictures.each do |picture| %>
-        <li><%= picture[:title]%>, <% picture[:artist] %>
-          <%= link_to image_tag(picture.url),"/pictures#{picture.id}"%></li>
+        <div class="recent_pic">
+          <%= link_to image_tag(picture.url, width: '140px'),"pictures/#{picture.id}"%>
+          <%= picture[:title]%>, <%= picture[:artist] %>
+        </div>
+
       <% end %>
-    </ul>
+    
   </div>
 
+  
+  <div class="photo_container">
+    <h3>All Pictures</h3>
+    <% @pictures.each do |picture| %>
+    
+      <div class="photo">
+        <%= link_to image_tag(picture.url, width: '140px'),"/pictures/#{picture.id}"%>
+        <p class="label"><%= picture[:title]%>, <% picture[:artist] %></p>  
+        
+      </div>
+          
+    <% end %>
+  </div>
+    
+
+    
+
+</div>      
+
+<div class="upload_box">
+  Upload a photo!
+  
+</div>
+
+<div class="db_info">
   <p>Pictures created within one hour: <%= Picture.created_within(1.hour.ago).count %></p>
 
   <p>Pictures created within a day: <%= Picture.created_within(1.day.ago).count %></p>
   <p>Total number of pictures in the database: <%=Picture.count %></p>
-
-    
-  </div>
-  <div class="upload_box">
-    Upload
-  </div>
 </div>

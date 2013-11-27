@@ -1,0 +1,45 @@
+
+
+.most_recent{
+  display: block;
+  background-color: #6B5C61;
+  width: 800px;
+  float: left;
+  display: inline-block;  
+  border-radius: 10px;
+}
+
+.recent_pic{
+  
+  width: 140px;
+  float: left;
+  display: inline-block;
+  margin: 5px;
+
+}
+
+
+.photo_container{
+  background-color: #6B5C61;
+  width: 640px;
+  float: left;
+  display: inline-block;  
+  border-radius: 10px;
+  
+  
+}
+
+.photo {
+  width: 140px;
+  display: inline-block;
+  
+  margin: 5px;
+  
+  float: left;
+
+
+}
+
+.db_info{
+  clear: both;
+}
