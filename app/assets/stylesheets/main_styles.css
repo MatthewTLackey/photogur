@@ -1,0 +1,41 @@
+body{
+  background-color: #362C30;
+  color: white;
+ }
+
+
+.container{
+  background-color: #362C30;
+  width: 70%;
+  margin: auto;
+  display: block;
+
+}
+
+.header_button{
+  font-family: Helvetica;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 150px;
+}
+
+.info{
+  color: white;
+  font-size: 10px;
+  display: inline-block;
+}
+
+img{
+  border: 3px solid #362C30;
+  padding: 0px;
+  margin: 3px;
+
+}
+
+
+a{
+  text-decoration: none;
+  color: white;
+}
+

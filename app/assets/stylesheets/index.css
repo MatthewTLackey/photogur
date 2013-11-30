@@ -7,6 +7,9 @@
   float: left;
   display: inline-block;  
   border-radius: 10px;
+  margin-bottom: 20px;
+
+
 }
 
 .recent_pic{
@@ -42,4 +45,18 @@
 
 .db_info{
   clear: both;
+}
+
+.upload_box{
+  background-color: #6B5C61;
+  border-radius: 10px;
+  float:right;
+  width: 320px;
+
+}
+
+.standard{
+  display: block;
+  clear: both;
+
 }

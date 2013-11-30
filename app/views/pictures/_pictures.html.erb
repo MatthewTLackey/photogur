@@ -1,0 +1,9 @@
+<% @pictures_in_order.each do |picture| %>
+    
+      <div class="photo">
+        <%= link_to image_tag(picture.url, width: '140px'),"/pictures/#{picture.id}"%>
+        <p class="label"><%= picture[:title]%>, <%= picture[:artist] %></p>  
+        
+      </div>
+          
+    <% end %>

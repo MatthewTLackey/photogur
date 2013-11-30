@@ -23,16 +23,12 @@
   
   <div class="photo_container">
     <h3>All Pictures</h3>
-    <% @pictures.each do |picture| %>
+
+    <%= render 'pictures/pictures' %>
     
-      <div class="photo">
-        <%= link_to image_tag(picture.url, width: '140px'),"/pictures/#{picture.id}"%>
-        <p class="label"><%= picture[:title]%>, <% picture[:artist] %></p>  
-        
-      </div>
-          
-    <% end %>
+    <idv class = 'standard'><%= paginate @pictures_in_order %></div>
   </div>
+    
     
 
     

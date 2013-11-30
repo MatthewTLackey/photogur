@@ -24,3 +24,13 @@ Picture.create!(
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+30.times do 
+
+  Picture.create!(
+    :title  => "Into the Poppies",
+    :artist => "John Wilhelm",
+    :url    => "http://monicao.s3.amazonaws.com/bitmaker/girl.jpg"  
+  )
+
+end
