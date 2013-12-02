@@ -1,3 +1,6 @@
-$('.photo_container').append('<%= j render("/pictures/pictures") %>');
-$('.pagination').replaceWith('<%#= j paginate("/pictures/pictures") %>');
+// $('.photo_container').append('<%= j render("/pictures/pictures") %>');
+// $('.pagination').replaceWith('<%#= j paginate("/pictures/pictures") %>');
 //alert('hello!');
+
+$('.standard').append('<%= j render(@pictures) %>');
+$('.pagination').replaceWith('<%= j paginate(@pictures) %>');

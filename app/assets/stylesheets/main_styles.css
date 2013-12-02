@@ -9,6 +9,7 @@ body{
   width: 70%;
   margin: auto;
   display: block;
+  margin-bottom: 5px;
 
 }
 
@@ -17,7 +18,7 @@ body{
   color: white;
   text-decoration: none;
   display: inline-block;
-  margin-left: 150px;
+  
 }
 
 .info{

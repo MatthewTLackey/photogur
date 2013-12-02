@@ -3,7 +3,7 @@
 .most_recent{
   display: block;
   background-color: #6B5C61;
-  width: 800px;
+  width: 640px;
   float: left;
   display: inline-block;  
   border-radius: 10px;
@@ -19,6 +19,10 @@
   display: inline-block;
   margin: 5px;
 
+}
+
+.center{
+  margin: auto;
 }
 
 
@@ -58,5 +62,11 @@
 .standard{
   display: block;
   clear: both;
+  margin: auto;
 
+}
+
+#navs{
+  clear: both;
+  display: block;
 }
