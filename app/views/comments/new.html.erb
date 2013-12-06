@@ -1,14 +1,7 @@
+
+
+<%= render @comments %>
+
 <p>Add a comment</p>
 
-<p>PUT THE PICTURE IN QUESTION HERE</p>
-
-<%= form_for @comments do |f| %>
-
-  <p>
-    <%= f.label "Enter your comment"%><br>
-    <%= f.text_field "comment"%>
-  </p>
-
-  <p>OLDER COMMENTS COULD GO HERE</p>
-
-<% end %>
+<%= render 'comment' %>

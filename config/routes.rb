@@ -3,10 +3,10 @@ Photogur::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root :to => "pictures#index"
   resources :pictures do
-    resources :comments
+    resources :comments, :except => [:index]
   end
 
-  # get 'pictures/:picture_id/comments' => 'comments#index', :as => 'comments'
+   get 'pictures/:picture_id/comments' => 'comments#index', :as => 'comments'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

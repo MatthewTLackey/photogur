@@ -8,10 +8,12 @@ class CommentsController < ApplicationController
 
   def show
 
+    @comment = @product.comments.build(comment_params)
+
   end
 
   def new
-
+    @comment = Comment.new
   end
 
   def create
