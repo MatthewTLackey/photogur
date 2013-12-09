@@ -18,7 +18,7 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
     @comment = @picture.comments.build
 
-    # @comments = @picture.comments
+    @comments = @picture.comments
   end
 
   def new
@@ -30,7 +30,7 @@ class PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
     if @picture.save
       #if the save for the picture was successful, go to index.html.erb
-      redirect_to pictures_url
+      redirect_to pictures_path
     
     else
       #otherwise render the view associated with the action :new (i.e. new.html.erb)

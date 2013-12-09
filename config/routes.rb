@@ -6,7 +6,7 @@ Photogur::Application.routes.draw do
     resources :comments, :except => [:index]
   end
 
-   get 'pictures/:picture_id/comments' => 'comments#index', :as => 'comments'
+  # get 'pictures/:picture_id/comments' => 'comments#index', :as => 'comments'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
