@@ -10,6 +10,7 @@ class PicturesController < ApplicationController
     #   format.js
     #   format.html
     # end
+    @upload = Picture.new
   end
 
   def show

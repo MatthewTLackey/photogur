@@ -47,6 +47,7 @@ gem 'debugger', group: [:development, :test]
 
 gem 'kaminari'
 
+gem 'carrierwave'
  
   # # Add Foundation Here
   # gem 'compass-rails' # you need this or you get an err

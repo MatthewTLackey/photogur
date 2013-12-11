@@ -24,6 +24,24 @@
     
   </div>
 
+<div class="upload_box">
+  Upload a photo!
+  <%= form_for @upload do |f| %>
+     <p>
+      <%= f.label "artist" %><br>
+      <%= f.text_field "artist" %>
+    </p>
+    <p>
+      <%= f.label "title" %><br>
+      <%= f.text_field "title" %>
+    </p>
+    <p>
+      <%= f.file_field :picture %>
+      <%= f.submit "Upload" %>
+    </p>
+  <% end %>
+  
+</div>
   
     <div class="photo_container">
       <h3>All Pictures</h3>
@@ -40,10 +58,7 @@
 
 </div>      
 
-<!-- <div class="upload_box">
-  Upload a photo!
-  
-</div> -->
+
 
 <div class="db_info">
   <p>Pictures created within one hour: <%= Picture.created_within(1.hour.ago).count %></p>
