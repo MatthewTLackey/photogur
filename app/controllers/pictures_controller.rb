@@ -18,7 +18,6 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
     @comment = @picture.comments.build
 
-    @comments = @picture.comments
   end
 
   def new

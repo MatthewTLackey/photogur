@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def show
 
-    @comment = Comment.find(params[:id])
+
 
   end
 
@@ -13,9 +13,9 @@ class CommentsController < ApplicationController
     
 
     if @comment.save
-      redirect_to pictures_path#, notice: "Comment created"
+      redirect_to picture_path(@picture.id), notice: "Comment created"
     else
-      render :action => :index
+      render :action => :show, notice: "Failed to create comment"
     end
 
   end
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:comment, :picture_id)
+    params.require(:comment).permit(:content, :picture_id)
 
   end
 
