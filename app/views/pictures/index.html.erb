@@ -14,19 +14,19 @@
       <h1>Most Recent Pictures</h1>
        
         <% @most_recent_pictures.each do |picture| %>
-          <%# if picture.url %>
+          <% if picture.url %>
             <div class="recent_pic">
             <%= link_to image_tag(picture.url, width: '140px'),"pictures/#{picture.id}"%>
             <%= picture[:title]%>, <%= picture[:artist] %>
 
             </div>
-        <%# else %>
-          <!-- <div class="recent_pic">
-            <%#= link_to image_tag(picture.image.url, width: '140px'),"pictures/#{picture.id}"%>
-            <%#= picture[:title]%>, <%#= picture[:artist] %>
+        <% else %>
+          <div class="recent_pic">
+            <%= link_to image_tag(picture.image.url, width: '140px'),"pictures/#{picture.id}"%>
+            <%= picture[:title]%>, <%= picture[:artist] %>
 
-            </div> -->
-        <%# end %>
+            </div>
+        <% end %>
 
       <% end %>
     
@@ -34,7 +34,7 @@
 
 <div class="upload_box">
   Upload a photo!
-  <%= form_for @upload do |f| %>
+  <%= form_for @uploaded_pic do |f| %>
      <p>
       <%= f.label "artist" %><br>
       <%= f.text_field "artist" %>
@@ -44,7 +44,7 @@
       <%= f.text_field "title" %>
     </p>
     <p>
-      <%= f.file_field :picture %>
+      <%= f.file_field :image %>
       <%= f.submit "Upload" %>
     </p>
   <% end %>

@@ -7,7 +7,18 @@ class PicturesController < ApplicationController
     #   format.js
     #   format.html
     # end
-    @upload = Picture.new
+    @uploaded_pic = Picture.new
+    @upload = ImageUploader.new
+    if @upload.store!
+      @uploaded_pic = Picture.new(picture_params)
+      @uploaded_pic.image = params[:file]
+      @uploaded_pic.image = File.open
+      @uploaded_pic.save!
+      if @uploaded_pic.save
+        redirect_to pictures_path
+      end
+    end
+
   end
 
   def show
