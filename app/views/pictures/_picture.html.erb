@@ -7,8 +7,6 @@
 <% else %>
   <div class="photo">
     <%= link_to image_tag(picture.image.url, width: '140px'),"/pictures/#{picture.id}"%>
-    <p class="label"><%= picture[:title]%>, <%= picture[:artist] %></p>  
-  
+    <p class="label"><%= picture[:title]%>, <%= picture[:artist] %></p>   
   </div>
-
 <% end %>

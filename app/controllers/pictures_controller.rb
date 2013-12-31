@@ -7,6 +7,8 @@ class PicturesController < ApplicationController
     #   format.js
     #   format.html
     # end
+
+    #These steps are taken to allow a picture to be uploaded locally from the index page
     @uploaded_pic = Picture.new
     @upload = ImageUploader.new
     if @upload.store!
@@ -18,7 +20,6 @@ class PicturesController < ApplicationController
         redirect_to pictures_path
       end
     end
-
   end
 
   def show
@@ -36,7 +37,6 @@ class PicturesController < ApplicationController
     if @picture.save
       #if the save for the picture was successful, go to index.html.erb
       redirect_to pictures_path
-    
     else
       #otherwise render the view associated with the action :new (i.e. new.html.erb)
       render :new
@@ -62,7 +62,6 @@ class PicturesController < ApplicationController
     @picture.destroy
     redirect_to pictures_url
   end
-
 
   private
   def picture_params

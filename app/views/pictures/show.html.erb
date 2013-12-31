@@ -15,12 +15,10 @@
 <h3>Comments: </h3>
 
   <% @picture.comments.each do |c| %>
-    
       <p><%= c.content %><br/>
       <%= c.created_at %></p>
   <% end %>
   <p>
   <%=render :partial => "/comments/comment" %>
   </p>
-
 </div>

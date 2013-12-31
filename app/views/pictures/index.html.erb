@@ -5,71 +5,56 @@
   </div>
 </div>
 
-
-
-
 <div class="container">
   <div class="most_recent">
    
-      <h1>Most Recent Pictures</h1>
-       
-        <% @most_recent_pictures.each do |picture| %>
-          <% if picture.url %>
-            <div class="recent_pic">
-            <%= link_to image_tag(picture.url),"pictures/#{picture.id}"%>
-            <%= picture[:title]%>, <%= picture[:artist] %>
-
-            </div>
-        <% else %>
-          <div class="recent_pic">
-            <%= link_to image_tag(picture.image.url),"pictures/#{picture.id}"%>
-            <%= picture[:title]%>, <%= picture[:artist] %>
-
-            </div>
-        <% end %>
-
+    <h1>Most Recent Pictures</h1>
+     
+    <% @most_recent_pictures.each do |picture| %>
+      <% if picture.url %>
+        <div class="recent_pic">
+          <%= link_to image_tag(picture.url),"pictures/#{picture.id}"%>
+          <%= picture[:title]%>, <%= picture[:artist] %>
+        </div>
+      <% else %>
+        <div class="recent_pic">
+          <%= link_to image_tag(picture.image.url),"pictures/#{picture.id}"%>
+          <%= picture[:title]%>, <%= picture[:artist] %>
+        </div>
       <% end %>
-    
+    <% end %>
   </div>
 
-<div class="upload_box">
-  <p class="upload_title">Upload a photo!</p>
-  <%= form_for @uploaded_pic do |f| %>
-     <p>
-      <%= f.label "artist" %><br>
-      <%= f.text_field "artist" %>
-    </p>
-    <p>
-      <%= f.label "title" %><br>
-      <%= f.text_field "title" %>
-    </p>
-    <p>
-      <%= f.file_field :image %>
-      <%= f.submit "Upload" %>
-    </p>
-  <% end %>
+  <div class="upload_box">
+    <p class="upload_title">Upload a photo!</p>
+    <%= form_for @uploaded_pic do |f| %>
+       <p>
+        <%= f.label "artist" %><br>
+        <%= f.text_field "artist" %>
+      </p>
+      <p>
+        <%= f.label "title" %><br>
+        <%= f.text_field "title" %>
+      </p>
+      <p>
+        <%= f.file_field :image %>
+        <%= f.submit "Upload" %>
+      </p>
+    <% end %>
+  </div>
   
-</div>
-  
-    <div class="photo_container">
-      <h3>All Pictures</h3>
-      <div class = 'standard'>
-        <%= render @pictures %> 
-      </div>
+  <div class="photo_container">
+    <h3>All Pictures</h3>
+    <div class = 'standard'>
+      <%= render @pictures %> 
+    </div>
     <p id="navs"><%= paginate @pictures %></p>
   </div>
     
-    
-
-    
-
 </div>      
-
-
 
 <div class="db_info">
   <p>Pictures created within one hour: <%= Picture.created_within(1.hour.ago).count %></p>
-
   <p>Pictures created within a day: <%= Picture.created_within(1.day.ago).count %></p>
   <p>Total number of pictures in the database: <%=Picture.count %></p>
 </div>

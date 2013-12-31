@@ -2,36 +2,18 @@ class CommentsController < ApplicationController
 
   before_filter :load_picture
 
-  def show
-
-
-
-  end
-
   def create
     @comment = @picture.comments.build(comment_params)
     
-
     if @comment.save
       redirect_to picture_path(@picture.id), notice: "Comment created"
     else
       render :action => :show, notice: "Failed to create comment"
     end
-
   end
 
   def new
     @comment = Comment.new
-  end
-
-  
-
-  def edit
-
-  end
-
-  def update
-
   end
 
   def destroy
