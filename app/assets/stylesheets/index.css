@@ -21,6 +21,10 @@
 
 }
 
+.recent_pic img:hover{
+  box-shadow: 0px 0px 3px 3px #E6E6E6;
+}
+
 .center{
   margin: auto;
 }
@@ -39,13 +43,23 @@
 .photo {
   width: 140px;
   display: inline-block;
-  
   margin: 5px;
-  
   float: left;
 
 
 }
+
+.photo img {
+  border: 3px solid #362C30;
+  padding: 0px;
+  margin: 3px;
+  height: 100px;
+}
+
+.photo img:hover{
+  box-shadow: 0px 0px 3px 3px #E6E6E6;
+}
+
 
 .db_info{
   clear: both;

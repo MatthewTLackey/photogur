@@ -28,10 +28,11 @@ body{
   display: inline-block;
 }
 
-img{
+.recent_pic img{
   border: 3px solid #362C30;
   padding: 0px;
   margin: 3px;
+  width: 140px;
 
 }
 
@@ -48,4 +49,12 @@ a{
 .photo_container h3{
   text-align: center;
 }
+
+
+
+
+
+
+
+
 

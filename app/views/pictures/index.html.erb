@@ -16,13 +16,13 @@
         <% @most_recent_pictures.each do |picture| %>
           <% if picture.url %>
             <div class="recent_pic">
-            <%= link_to image_tag(picture.url, width: '140px'),"pictures/#{picture.id}"%>
+            <%= link_to image_tag(picture.url),"pictures/#{picture.id}"%>
             <%= picture[:title]%>, <%= picture[:artist] %>
 
             </div>
         <% else %>
           <div class="recent_pic">
-            <%= link_to image_tag(picture.image.url, width: '140px'),"pictures/#{picture.id}"%>
+            <%= link_to image_tag(picture.image.url),"pictures/#{picture.id}"%>
             <%= picture[:title]%>, <%= picture[:artist] %>
 
             </div>
