@@ -1,10 +1,7 @@
 class PicturesController < ApplicationController
   
-  def index
-    @comments = Comment.all
-    #@pictures = Picture.all
+  def index   
     @most_recent_pictures = Picture.most_recent_five
-    #@pictures_in_order = Picture.order('pictures.created_at DESC').page(params[:page])
     @pictures = Picture.order('pictures.created_at DESC').page(params[:page])
     # respond_to do |format|
     #   format.js
@@ -61,7 +58,7 @@ class PicturesController < ApplicationController
 
   private
   def picture_params
-    params.require(:picture).permit(:artist, :title, :url, :comments)
+    params.require(:picture).permit(:artist, :title, :url, :comments, :image)
   end
 
 
